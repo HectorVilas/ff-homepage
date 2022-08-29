@@ -1,3 +1,32 @@
+html {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  background-color: darkslateblue;
+  flex: auto;
+  padding: 0rem;
+  margin: 0rem;
+  /* background-color: darkslateblue; */
+  background: radial-gradient(at top, hsl(220, 50%, 30%), hsl(220, 30%, 20%));
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 
+    "..... ..... time"
+    "..... ..... .....";
+    gap: 1rem;
+}
+
+.time {
+  grid-area: time;
+  /* border: 1px solid black; */
+}
+
+
+** {
+  outline: 3px solid red;
 }

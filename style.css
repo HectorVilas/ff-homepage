@@ -16,6 +16,10 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  /*temporal scale for clock test*/
+  grid-template-columns: 1fr 1fr 3fr;
+  grid-template-rows: 3fr 1fr;
+  /*temporal scale for clock test*/
   grid-template-areas: 
     "..... ..... time"
     "..... ..... .....";
@@ -41,13 +45,13 @@ body {
 .minutes-hand,
 .hours-hand {
   position: absolute;
-  left: 40%;
+  left: 39.5%;
+  top: -0.5%;
   height: 100%;
   width: 20%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: drop-shadow(.25rem .25rem .05rem rgba(0,0,0,.5));
 }
 .seconds-hand{
   background-image: url(./media/images/clock/seconds-hand.svg);
@@ -59,6 +63,14 @@ body {
   background-image: url(./media/images/clock/hours-hand.svg);
   animation: rotation linear 30s infinite;
 }
+.seconds-hand.shadow,
+.minutes-hand.shadow,
+.hours-hand.shadow {
+  left: 40%;
+  top: 0.5%;
+  filter: brightness(.70) blur(.15rem);
+}
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);

@@ -37,16 +37,36 @@ body {
   border-radius: 50%;
   position: relative;
 }
-.second-hand,
-.minute-hand,
-.hour-hand {
+.seconds-hand,
+.minutes-hand,
+.hours-hand {
   position: absolute;
-  left: 45%;
+  left: 40%;
   height: 100%;
-  width: 10%;
-  background: rgba(0, 0, 0, .25);
+  width: 20%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: drop-shadow(.25rem .25rem .05rem rgba(0,0,0,.5));
 }
-
+.seconds-hand{
+  background-image: url(./media/images/clock/seconds-hand.svg);
+  animation: rotation linear 10s infinite;
+} .minutes-hand{
+  background-image: url(./media/images/clock/minutes-hand.svg);
+  animation: rotation linear 15s infinite;
+} .hours-hand {
+  background-image: url(./media/images/clock/hours-hand.svg);
+  animation: rotation linear 30s infinite;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* - - - for testing - - - */
 ** {

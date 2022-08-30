@@ -41,6 +41,35 @@ body {
   border-radius: 50%;
   position: relative;
 }
+
+.hour-mark {
+  --width: 10px;
+  position: absolute;
+  width: var(--width);
+  height: 100%;
+  background-color: black;
+  left: calc(50% - var(--width) / 2);
+  transform: rotate(30deg);
+  background: linear-gradient(
+    rgba(0,0,0,0) 2%,
+    rgb(50,50,50) 2%,
+    rgb(50,50,50) 10%,
+    rgba(0,0,0,0) 10%,
+    rgba(0,0,0,0) 90%,
+    rgb(50,50,50) 90%,
+    rgb(50,50,50) 98%,
+    rgba(0,0,0,0) 98%,
+    rgba(0,0,0,0) 98%
+  );
+}
+.hour-marks {
+  --extrude: 3px;
+  width: 100%;
+  height: 100%;
+  transform: translate(calc(var(--extrude)*-1), calc(var(--extrude)*-1));
+  filter: drop-shadow(var(--extrude) var(--extrude) 2px black);
+}
+
 .seconds-hand,
 .minutes-hand,
 .hours-hand {

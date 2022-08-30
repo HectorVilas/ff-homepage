@@ -7,8 +7,9 @@ html {
 }
 
 body {
+  --separation: 1rem;
   flex: auto;
-  padding: 0rem;
+  padding: var(--separation);
   margin: 0rem;
   /* background-color: darkslateblue; */
   background: radial-gradient(at top, hsl(220, 50%, 30%), hsl(220, 30%, 20%));
@@ -18,15 +19,36 @@ body {
   grid-template-areas: 
     "..... ..... time"
     "..... ..... .....";
-    gap: 1rem;
+  gap: var(--separation);
 }
 
+
+
+/* - - - time related - - - */
 .time {
   grid-area: time;
-  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+}
+
+.clock {
+  background-color: gray;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: relative;
+}
+.second-hand,
+.minute-hand,
+.hour-hand {
+  position: absolute;
+  left: 45%;
+  height: 100%;
+  width: 10%;
+  background: rgba(0, 0, 0, .25);
 }
 
 
+/* - - - for testing - - - */
 ** {
   outline: 3px solid red;
 }

@@ -49,14 +49,14 @@ body {
     .5rem .5rem 1rem rgba(0,0,0,.25);
 }
 
-.hour-mark {
+.hour-mark,
+.second-mark {
   --width: 5px;
   position: absolute;
   width: var(--width);
   height: 100%;
   background-color: black;
   left: calc(50% - var(--width) / 2);
-  transform: rotate(30deg);
   background: linear-gradient(
     rgba(0,0,0,0) 2%,
     rgb(50,50,50) 2%,
@@ -69,18 +69,33 @@ body {
     rgba(0,0,0,0) 98%
   );
 }
+.second-mark {
+  background: linear-gradient(
+    rgba(0,0,0,0) 2%,
+    rgb(50,50,50) 2%,
+    rgb(50,50,50) 6%,
+    rgba(0,0,0,0) 6%,
+    rgba(0,0,0,0) 94%,
+    rgb(50,50,50) 94%,
+    rgb(50,50,50) 98%,
+    rgba(0,0,0,0) 98%,
+    rgba(0,0,0,0) 98%
+  );
+  /* outline: 1px solid red; */
+}
 .hour-marks {
-  --extrude: 3px;
+  --extrude: 2px;
   width: 100%;
   height: 100%;
   transform: translate(calc(var(--extrude)*-1), calc(var(--extrude)*-1));
-  filter: drop-shadow(var(--extrude) var(--extrude) 2px hsl(220, 30%, 30%));
+  filter: drop-shadow(var(--extrude) var(--extrude) 0px hsl(220, 30%, 35%));
   overflow: hidden;
 }
 
 .seconds-hand,
 .minutes-hand,
 .hours-hand {
+  z-index: 1;
   position: absolute;
   /* left: 39.5%; */
   left: 39%;

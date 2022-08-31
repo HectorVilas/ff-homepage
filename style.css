@@ -11,14 +11,13 @@ body {
   flex: auto;
   padding: var(--separation);
   margin: 0rem;
-  /* background-color: darkslateblue; */
   background: radial-gradient(at top, hsl(220, 50%, 30%), hsl(220, 30%, 20%));
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   /*temporal scale for clock test*/
-  grid-template-columns: 1fr 1fr 3fr;
-  grid-template-rows: 3fr 1fr;
+  /* grid-template-columns: 1fr 1fr 3fr;
+  grid-template-rows: 3fr 1fr; */
   /*temporal scale for clock test*/
   grid-template-areas: 
     "..... ..... time"
@@ -43,7 +42,7 @@ body {
 }
 
 .hour-mark {
-  --width: 10px;
+  --width: 5px;
   position: absolute;
   width: var(--width);
   height: 100%;
@@ -68,14 +67,17 @@ body {
   height: 100%;
   transform: translate(calc(var(--extrude)*-1), calc(var(--extrude)*-1));
   filter: drop-shadow(var(--extrude) var(--extrude) 2px black);
+  overflow: hidden;
 }
 
 .seconds-hand,
 .minutes-hand,
 .hours-hand {
   position: absolute;
-  left: 39.5%;
-  top: -0.5%;
+  /* left: 39.5%; */
+  left: 39%;
+  /* top: -0.5%; */
+  top: -1%;
   height: 100%;
   width: 20%;
   background-position: center;
@@ -96,7 +98,8 @@ body {
 .minutes-hand.shadow,
 .hours-hand.shadow {
   left: 40%;
-  top: 0.5%;
+  /* top: 0.5%; */
+  top: 1%;
   filter: brightness(.70) blur(.15rem);
 }
 

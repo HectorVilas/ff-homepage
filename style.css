@@ -49,6 +49,21 @@ body {
     .5rem .5rem 1rem rgba(0,0,0,.25);
   isolation: isolate;
 }
+.glass {
+  position: absolute;
+  background: linear-gradient(30deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,.20),
+    rgba(255,255,255,0),
+    rgba(255,255,255,.15),
+    rgba(255,255,255,0),
+    rgba(255,255,255,.20),
+    rgba(255,255,255,0)
+  );
+  inset: 0;
+  border-radius: 50%;
+  /* z-index: 2; */
+}
 
 .hour-mark,
 .second-mark {
@@ -96,7 +111,7 @@ body {
 .seconds-hand,
 .minutes-hand,
 .hours-hand {
-  z-index: 1;
+  /* z-index: 1; */
   position: absolute;
   /* left: 39.5%; */
   left: 39%;
@@ -123,6 +138,14 @@ body {
   /* top: 0.5%; */
   top: 1%;
   filter: brightness(.70) blur(.1rem);
+}
+.seconds-hand.reflection,
+.minutes-hand.reflection,
+.hours-hand.reflection {
+  left: 35%;
+  /* top: 0.5%; */
+  top: -1%;
+  filter: brightness(1.5) blur(.25rem) opacity(.30);
 }
 
 

@@ -15,10 +15,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  /*temporal scale for clock test*/
-  /* grid-template-columns: 1fr 1fr 3fr;
-  grid-template-rows: 3fr 1fr; */
-  /*temporal scale for clock test*/
   grid-template-areas: 
     "..... ..... time"
     "..... ..... .....";
@@ -35,7 +31,6 @@ body {
 }
 
 .clock {
-  /* background-color: gray; */
   background: linear-gradient(20deg,
     hsl(220, 30%, 50%),
     hsl(220, 50%, 60%),
@@ -62,7 +57,6 @@ body {
   );
   inset: 0;
   border-radius: 50%;
-  /* z-index: 2; */
 }
 
 .hour-mark,
@@ -97,7 +91,6 @@ body {
     rgba(0,0,0,0) 98%,
     rgba(0,0,0,0) 98%
   );
-  /* outline: 1px solid red; */
 }
 .hour-marks {
   --extrude: 2px;
@@ -111,11 +104,8 @@ body {
 .seconds-hand,
 .minutes-hand,
 .hours-hand {
-  /* z-index: 1; */
   position: absolute;
-  /* left: 39.5%; */
   left: 39%;
-  /* top: -0.5%; */
   top: -1%;
   height: 100%;
   width: 20%;
@@ -135,16 +125,14 @@ body {
 .minutes-hand.shadow,
 .hours-hand.shadow {
   left: 40%;
-  /* top: 0.5%; */
   top: 1%;
   filter: brightness(.70) blur(.1rem);
 }
 .seconds-hand.reflection,
 .minutes-hand.reflection,
 .hours-hand.reflection {
-  left: 35%;
-  /* top: 0.5%; */
-  top: -1%;
+  left: 38%;
+  top: -2%;
   filter: brightness(1.5) blur(.25rem) opacity(.30);
 }
 

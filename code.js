@@ -4,10 +4,9 @@ const
   clockHoursHands = document.querySelectorAll(".hours-hand"),
   clockMinutesHands = document.querySelectorAll(".minutes-hand"),
   clockSecondsHands = document.querySelectorAll(".seconds-hand");
-let
-  clockHoursLast = 0,
-  clockMinutesLast = 0,
-  clockSecondsLast = 0;
+
+
+
 // - - - functions - - -
 
 //

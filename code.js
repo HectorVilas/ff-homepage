@@ -4,7 +4,10 @@ const
   clockHoursHands = document.querySelectorAll(".hours-hand"),
   clockMinutesHands = document.querySelectorAll(".minutes-hand"),
   clockSecondsHands = document.querySelectorAll(".seconds-hand");
-
+let
+  clockHoursLast = 0,
+  clockMinutesLast = 0,
+  clockSecondsLast = 0;
 // - - - functions - - -
 
 //
@@ -29,18 +32,32 @@ function clockCreateHourMarks() {
 function runClock() {
   const date = new Date();
 
-  clockHoursHands.forEach(hand => clockRotateHand(hand, date.getHours()));
-  clockMinutesHands.forEach(hand => clockRotateHand(hand, date.getMinutes()));
-  clockSecondsHands.forEach(hand => clockRotateHand(hand, date.getSeconds()));
+  clockHoursHands.forEach(hand => clockRotateHand(hand, date));
+  clockMinutesHands.forEach(hand => clockRotateHand(hand, date));
+  clockSecondsHands.forEach(hand => clockRotateHand(hand, date));
 }
 
 //handles the clock hand rotations, fixes 360°
-function clockRotateHand(hand, time) {
-  let deg;
+function clockRotateHand(hand, date) {
+  let deg = 6, time;
   
-  hand.className.includes("hours-hand") ? deg = 30 : deg = 6
+  if(hand.className.includes("hours-hand")) {
+    deg = 30;
+    time = date.getHours()+(date.getMinutes()/60);
+  } else if(hand.className.includes("minutes-hand")) {
+    time = date.getMinutes()+30;
+  } else {
+    time = date.getSeconds();
+  };
 
-  if(time*deg == 0) {
+  if(time === 0 && !hand.className.includes("to-zero-fix")) {
+    hand.classList.add("to-zero-fix");
+  } else if(date.getSeconds() !== 0) {
+    hand.classList.remove("to-zero-fix")
+  };
+  
+  if(hand.className.includes("to-zero-fix")) {
+    console.log("fixing zero");
     hand.classList.add("no-animate");
     hand.style.transform = `rotate(${deg* -1}deg)`;
     setTimeout(() => {

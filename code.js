@@ -44,7 +44,7 @@ function clockRotateHand(hand, date) {
     deg = 30;
     time = date.getHours()+(date.getMinutes()/60);
   } else if(hand.className.includes("minutes-hand")) {
-    time = date.getMinutes()+30;
+    time = date.getMinutes();
   } else {
     time = date.getSeconds();
   };

@@ -133,7 +133,7 @@ body {
 .hours-hand.reflection {
   left: 38%;
   top: -2%;
-  filter: brightness(1.5) blur(.25rem) opacity(.30);
+  filter: brightness(2.5) blur(.20rem) opacity(.25);
 }
 
 

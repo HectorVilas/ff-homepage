@@ -42,21 +42,22 @@ function clockRotateHand(hand, date) {
   
   if(hand.className.includes("hours-hand")) {
     deg = 30;
+    //extra small rotation for realism, prevents abrupt jump
     time = date.getHours()+(date.getMinutes()/60);
   } else if(hand.className.includes("minutes-hand")) {
-    time = date.getMinutes();
+    time = date.getMinutes()-30;
   } else {
     time = date.getSeconds();
   };
-
-  if(time === 0 && !hand.className.includes("to-zero-fix")) {
-    hand.classList.add("to-zero-fix");
-  } else if(date.getSeconds() !== 0) {
-    hand.classList.remove("to-zero-fix")
-  };
-  
+  //adding class to be fixed
+  if(time === 0 && !hand.className.includes("seconds-hand") && date.getSeconds() === 0
+  || time === 0 && hand.className.includes("seconds-hand")){
+      hand.classList.add("to-zero-fix");
+  } else {
+      hand.classList.remove("to-zero-fix")
+  }
+  //fixing zero position if necessary or applying rotation
   if(hand.className.includes("to-zero-fix")) {
-    console.log("fixing zero");
     hand.classList.add("no-animate");
     hand.style.transform = `rotate(${deg* -1}deg)`;
     setTimeout(() => {

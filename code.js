@@ -45,7 +45,7 @@ function clockRotateHand(hand, date) {
     //extra small rotation for realism, prevents abrupt jump
     time = date.getHours()+(date.getMinutes()/60);
   } else if(hand.className.includes("minutes-hand")) {
-    time = date.getMinutes()-30;
+    time = date.getMinutes();
   } else {
     time = date.getSeconds();
   };

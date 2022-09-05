@@ -52,3 +52,12 @@ The wallapers are random nature images from [placeimg.com](https://placeimg.com/
 
 The search bar was surprisingly easy to make. It's just a form sent to DuckDuckGo or Google. The only disadvantage with this is the lack of autocompletion, so maybe I'll replace it with buttons for shortcuts.
 
+---
+
+music player added with `<iframe>`.
+
+![](READMEmd/progress02.gif)
+
+It was easy, just an `iframe` with aersia.net as source. To not waste their website's bandwith, I added a button that will add the source to an invisible `iframe` and then unhide it, so now it will load their page and not every time it's open.
+
+The button is made with `clip-path`. The good thing is that I can add a shiny effect on hover. The bad thing is I can barely change it's style.

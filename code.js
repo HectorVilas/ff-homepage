@@ -3,7 +3,10 @@ const
   clock = document.querySelector(".clock"),
   clockHoursHands = document.querySelectorAll(".hours-hand"),
   clockMinutesHands = document.querySelectorAll(".minutes-hand"),
-  clockSecondsHands = document.querySelectorAll(".seconds-hand");
+  clockSecondsHands = document.querySelectorAll(".seconds-hand"),
+  //music player
+  musicPlayer = document.querySelector(".player"),
+  btnOpenPlayer = document.querySelector(".open-iframe");
 
 
 
@@ -68,6 +71,17 @@ function clockRotateHand(hand, date) {
     hand.style.transform = `rotate(${time*deg}deg)`;
   };
 };
+
+//open music player, hides button
+function openPlayer(){
+  btnOpenPlayer.classList.add("hidden");
+  musicPlayer.src = "https://aersia.skie.me/#/Mellow";
+  musicPlayer.classList.remove("hidden");
+}
+
+
+// - - - event listeners - - -
+btnOpenPlayer.addEventListener("click", openPlayer);
 
 
 

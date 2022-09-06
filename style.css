@@ -32,13 +32,13 @@ body {
   grid-area: time;
   display: flex;
   justify-content: right;
+  gap: 1rem;
 }
 
 .clock {
-  --size: 300px;
+  --size: 350px;
   width: var(--size);
   height: var(--size);
-  margin: 1rem;
   overflow: hidden;
   background: url(https://placeimg.com/1000/560/nature) no-repeat top left;
   background-size: 100vw;

@@ -20,7 +20,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: 
-    "...... ...... ......"
+    "...... ...... time  "
     "music  search ......";
   gap: var(--separation);
 }
@@ -29,12 +29,9 @@ body {
 
 /* - - - time related - - - */
 .time {
-  position: absolute;
-  right: 0;
-  top: 0;
+  grid-area: time;
   display: flex;
-  justify-content: center;
-  overflow: hidden;
+  justify-content: right;
 }
 
 .clock {
@@ -42,27 +39,26 @@ body {
   width: var(--size);
   height: var(--size);
   margin: 1rem;
-  
+  overflow: hidden;
   background: url(https://placeimg.com/1000/560/nature) no-repeat top left;
   background-size: 100vw;
   aspect-ratio: 1/1;
   border-radius: 50%;
   position: relative;
-  box-shadow:
-    /* inset -.25rem -.25rem 3rem hsl(220, 50%, 40%), */
-    .5rem .5rem 1rem rgba(0,0,0,.25);
+  box-shadow: .5rem .5rem 1rem rgba(0,0,0,.25);
   isolation: isolate;
-} .clock::after {
+} .clock::before {
   position: absolute;
   content: "";
+  box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
   inset: 0;
   background: linear-gradient(20deg,
-    hsl(220, 30%, 50%),
-    hsl(220, 50%, 60%),
-    hsl(220, 30%, 45%)
+    hsla(220, 30%, 70%, 0.5),
+    hsla(220, 50%, 80%, 0.5),
+    hsla(220, 30%, 65%, 0.5)
   );
-  opacity: .15;
   border-radius: 50%;
+  backdrop-filter: blur(.25rem);
 }
 .glass {
   position: absolute;
@@ -76,7 +72,6 @@ body {
     rgba(255,255,255,0)
   );
   inset: 0;
-  /* opacity: .25; */
   border-radius: 50%;
 }
 
@@ -119,7 +114,6 @@ body {
   height: 100%;
   transform: translate(calc(var(--extrude)*-1), calc(var(--extrude)*-1));
   filter: drop-shadow(var(--extrude) var(--extrude) 0px hsl(220, 10%, 15%));
-  overflow: hidden;
 }
 
 .seconds-hand,
@@ -165,7 +159,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* outline: 3px solid gray; */
 }
 input[type="search"] {
   --font: 1.5em;
@@ -212,7 +205,6 @@ input[type="search"] {
 }
 .open-iframe {
   position: relative;
-  overflow: hidden;
   height: 50px;
   width: 50px;
   padding: 1rem;

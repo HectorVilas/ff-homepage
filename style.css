@@ -17,7 +17,7 @@ body {
   background-size: cover;
   /* /random image */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:1fr 1fr auto;
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: 
     "...... ...... time  "
@@ -28,10 +28,13 @@ body {
 
 
 /* - - - time related - - - */
+
+/* clock */
 .time {
   grid-area: time;
   display: flex;
-  justify-content: right;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -39,6 +42,7 @@ body {
   --size: 350px;
   width: var(--size);
   height: var(--size);
+  flex: 0 0 auto;
   overflow: hidden;
   background: url(https://placeimg.com/1000/560/nature) no-repeat top left;
   background-size: 100vw;
@@ -149,6 +153,22 @@ body {
   left: 38%;
   top: -2%;
   filter: brightness(2.5) blur(.02rem) opacity(.10);
+}
+
+/*date*/
+.actual-date {
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ddd;
+  font-weight: 800;
+  text-shadow: 0 0 .25rem black;
+  background-color: rgba(0,0,0,.25);
+  backdrop-filter: blur(1rem);
+  border-radius: 2rem;
+  padding: .5rem;
+}.actual-date p {
+  padding: 0;
+  margin: 0;
 }
 
 

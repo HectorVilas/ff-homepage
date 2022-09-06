@@ -10,7 +10,7 @@ This is a project for personal use, a home page for my Firefox browser. It's pur
 The page:
 - ⭕date:
 - - ✅clock
-- - ❌full date
+- - ✅full date
 - - ❌almanac
 - ⭕search pages:
 - - ✅search bar
@@ -28,7 +28,7 @@ The page:
 - - ❌editable
 - - ❌deleteable
 - - ❌optional countdown
-- ❌music player (aersia.net)
+- ✅music player (aersia.net)
 - ❌ask if user wants to close window if:
 - - ❌music player has been used
 - - ❌a note is being edited

@@ -77,7 +77,27 @@ function openPlayer(){
   btnOpenPlayer.classList.add("hidden");
   musicPlayer.src = "https://aersia.skie.me/#/Mellow";
   musicPlayer.classList.remove("hidden");
-}
+};
+
+//show full date in page
+function setDate() {
+  const
+  date = new Date(),
+    days = ["Domingo", "Lunes", "Martes", "Miércoles",
+      "Jueves", "Viernes", "Sábado",],
+    months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
+      "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+    domDay = document.querySelector(".day"),
+    domDate = document.querySelector(".date"),
+    domMonth = document.querySelector(".month"),
+    domYear = document.querySelector(".year");
+
+    domDay.innerText = days[date.getDay()];
+    domDate.innerText = date.getDate();
+    domMonth.innerText = months[date.getMonth()];
+    domYear.innerText = date.getFullYear();
+};
+
 
 
 // - - - event listeners - - -
@@ -95,3 +115,5 @@ setInterval(() => {
 }, 1000);
 
 clockCreateHourMarks();
+
+setDate();

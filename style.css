@@ -17,10 +17,10 @@ body {
   background-size: cover;
   /* /random image */
   display: grid;
-  grid-template-columns:1fr 1fr auto;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: 
-    "...... ...... time  "
+    "...... favs   time  "
     "music  search ......";
   gap: var(--separation);
 }
@@ -34,7 +34,7 @@ body {
   grid-area: time;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   gap: 1rem;
 }
 
